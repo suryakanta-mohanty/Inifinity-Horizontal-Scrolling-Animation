@@ -60,7 +60,7 @@ h1{
 }
 
 .scroller[data-animated="true"]{
-  border: 5px solid lime;
+  /* border: 5px solid lime; */
   overflow: hidden;
   -webkit-mask: linear-gradient(
     90deg, 
@@ -82,7 +82,16 @@ h1{
 
 .scroller[data-animated="true"] .scroller__inner{
   flex-wrap: nowrap;
-  animation: scroll 20s linear infinite;
+  animation: 
+    scroll 
+    var(--_animation_duration, 20s) 
+    var(--_animation_direction, forwards)
+    linear 
+    infinite;
+}
+
+.scroller[data-direction='right']{
+  --_animation_direction: reverse;
 }
 
 @keyframes scroll{
