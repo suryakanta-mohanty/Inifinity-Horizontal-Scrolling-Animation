@@ -48,7 +48,7 @@ h1{
 }
 
 .scroller{
-  max-width: 400px;
+  max-width: 600px;
   /* outline: 3px solid lime; */
 }
 
@@ -58,3 +58,28 @@ h1{
   gap: 1rem;
   flex-wrap: wrap;
 }
+
+.scroller[data-animated="true"]{
+  overflow: hidden;
+  -webkit-mask: linear-gradient(
+    90deg, 
+    transparent,
+    white 20%,
+    white 80%, 
+    transparent
+  );
+
+  mask: linear-gradient(
+    90deg, 
+    transparent, 
+    white 20%,
+    white 80%,
+    transparent
+  );
+  
+}
+
+.scroller[data-animated="true"] .scroller__inner{
+  flex-wrap: nowrap;
+}
+
