@@ -60,6 +60,7 @@ h1{
 }
 
 .scroller[data-animated="true"]{
+  border: 5px solid lime;
   overflow: hidden;
   -webkit-mask: linear-gradient(
     90deg, 
@@ -76,10 +77,18 @@ h1{
     white 80%,
     transparent
   );
-  
+
 }
 
 .scroller[data-animated="true"] .scroller__inner{
   flex-wrap: nowrap;
+  animation: scroll 20s linear infinite;
 }
 
+@keyframes scroll{
+  to{
+    transform: translate(calc(-50% - 0.5rem));
+  }
+
+
+}
